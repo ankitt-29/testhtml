@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 15px;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      .nav-container {
+        display: flex;
+      }
+
+      .nav-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+
+      .nav-links li {
+        margin-right: 20px;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: #fff;
+      }
+
+      .menu-icon {
+        display: none; /* Initially hide the menu icon on larger screens */
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      @media only screen and (max-width: 768px) {
+        .nav-links {
+          display: none; 
+          flex-direction: column;
+          position: absolute;
+          top: 60px;
+          left: 0;
+          width: 100%;
+          background-color: #333;
+        }
+
+        .navbar.show-menu .nav-links {
+          display: flex;
+        }
+
+        .menu-icon {
+          display: block; 
+        }
+      }
+
+      main {
+        padding: 20px;
+      }
+
+      .form-container {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        margin-bottom: 8px;
+      }
+
+      input,
+      textarea {
+        padding: 10px;
+        margin-bottom: 15px;
+      }
+
+      button {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+      }
+
+      button:hover {
+        background-color: #555;
+      }
+    </style>
+    <title>Your Website</title>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="logo">Your Logo</div>
+        <nav class="nav-container">
+          <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="/about">About Us</a></li>
+            <!-- Add more navigation links as needed -->
+          </ul>
+        </nav>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+      </div>
+    </header>
+
+    <main>
+      <section class="form-container">
+        <h2>Contact Us</h2>
+        <form>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" />
+
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Your Email"
+          />
+
+          <label for="message">Message:</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Your Message"
+          ></textarea>
+
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+    </main>
+
+    <script>
+      function toggleMenu() {
+        const navbar = document.querySelector(".navbar");
+        navbar.classList.toggle("show-menu");
+      }
+    </script>
+  </body>
+</html>
